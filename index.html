@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Mondrian Portfolio Demo</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<main>
+			<!-- Pinned Mondrian grid -->
+			<div class="grid-wrapper">
+				<div class="grid grid-a">
+					<div class="cell" data-track="0,1,1,1,1,1,1,1,1,1">
+						<div class="column">
+							<div class="panel panel-a0">
+								<h1>Scroll to start</h1>
+								<h2>panel-a0</h2>
+							</div>
+							<div class="panel panel-a1">
+								<div class="grid grid-a1">
+									<!-- LEFT SIDE: a1-a -->
+									<div
+										class="panel panel-a1-a sub-cell"
+										data-track="0,0,1,1,1,1,1,1,1,1"
+									>
+										<div class="row">
+											<div class="panel panel-a1-a0">
+												<h1>
+													Hi, my name is Daniel Woo
+												</h1>
+												<h2>panel-a1-a0</h2>
+											</div>
+											<div class="panel panel-a1-a1">
+												<div class="grid grid-a1-a1">
+													<!-- TEMP REMOVED a1-a1-a : vertical stack -->
+													<!-- <div
+														class="panel panel-a1-a1-a"
+													>
+														<h2>
+															TEMP REMOVED
+															panel-a1-a1-a
+														</h2>
+													</div> -->
+													<div
+														class="panel panel-a1-a1-a sub-cell"
+														data-track="0,0,0,1,1,1,1,1,1,1"
+													>
+														<div
+															class="column-reverse"
+														>
+															<!-- stack index 0 -->
+															<div
+																class="panel panel-a1-a1-a0"
+															>
+																<h2>
+																	panel-a1-a1-a0
+																</h2>
+															</div>
+
+															<!-- stack index 1 -->
+															<div
+																class="panel panel-a1-a1-a1"
+															>
+																<div
+																	class="grid grid-a1-a1-a1"
+																>
+																	<!-- panel-a1-a1-a1-a: sub-cell with row-reverse -->
+																	<div
+																		class="panel panel-a1-a1-a1-a sub-cell"
+																		data-track="0,0,0,0,1,1,1,1,1,1"
+																	>
+																		<div
+																			class="row-reverse"
+																		>
+																			<div
+																				class="panel panel-a1-a1-a1-a0"
+																			>
+																				<h2>
+																					panel-a1-a1-a1-a0
+																				</h2>
+																			</div>
+
+																			<!-- panel-a1-a1-a1-a1: grid container -->
+																			<div
+																				class="panel panel-a1-a1-a1-a1"
+																			>
+																				<div
+																					class="grid grid-a1-a1-a1-a1"
+																				>
+																					<!-- panel-a1-a1-a1-a1-a: row-reverse content -->
+																					<div
+																						class="panel panel-a1-a1-a1-a1-a sub-cell"
+																						data-track="0,0,0,0,0,0,1,1,1,1"
+																					>
+																						<div
+																							class="row-reverse"
+																						>
+																							<div
+																								class="panel panel-a1-a1-a1-a1-a0"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-a1-a0
+																								</h2>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-a1-a1-a1"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-a1-a1
+																								</h2>
+																							</div>
+																						</div>
+																					</div>
+
+																					<!-- panel-a1-a1-a1-a1-b: row-reverse content -->
+																					<div
+																						class="panel panel-a1-a1-a1-a1-b sub-cell"
+																						data-track="0,0,0,0,0,1,1,2,2,2"
+																					>
+																						<div
+																							class="row-reverse"
+																						>
+																							<div
+																								class="panel panel-a1-a1-a1-a1-b0"
+																							>
+																								<h1>
+																									snake
+																								</h1>
+																								<h2>
+																									panel-a1-a1-a1-a1-b0
+																								</h2>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-a1-a1-b1"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-a1-b1
+																								</h2>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-a1-a1-b2"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-a1-b2
+																								</h2>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<!-- a1-a1-a1-b: row-reverse stack -->
+																	<div
+																		class="panel panel-a1-a1-a1-b sub-cell"
+																		data-track="0,0,0,0,1,1,1,1,1,1"
+																	>
+																		<div
+																			class="row-reverse"
+																		>
+																			<!-- stack index 0 -->
+																			<div
+																				class="panel panel-a1-a1-a1-b0"
+																			>
+																				<h2>
+																					panel-a1-a1-a1-b0
+																				</h2>
+																			</div>
+
+																			<!-- stack index 1: b1 subtree -->
+																			<div
+																				class="panel panel-a1-a1-a1-b1"
+																			>
+																				<div
+																					class="grid grid-a1-a1-a1-b1"
+																				>
+																					<!-- panel-a1-a1-a1-b1-a is sub-cell with column -->
+																					<div
+																						class="panel panel-a1-a1-a1-b1-a sub-cell"
+																						data-track="0,0,0,0,0,1,1,1,1,1"
+																					>
+																						<div
+																							class="column"
+																						>
+																							<div
+																								class="panel panel-a1-a1-a1-b1-a0"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-b1-a0
+																								</h2>
+																							</div>
+
+																							<!-- panel-a1-a1-a1-b1-a1: row-reverse content -->
+																							<div
+																								class="panel panel-a1-a1-a1-b1-a1 sub-cell"
+																								data-track="0,0,0,0,0,0,1,1,1,1"
+																							>
+																								<div
+																									class="row-reverse"
+																								>
+																									<div
+																										class="panel panel-a1-a1-a1-b1-a1-a0"
+																									>
+																										<h2>
+																											panel-a1-a1-a1-b1-a1-a0
+																										</h2>
+																									</div>
+
+																									<!-- panel-a1-a1-a1-b1-a1-a1: column-reverse content -->
+																									<div
+																										class="panel panel-a1-a1-a1-b1-a1-a1 sub-cell"
+																										data-track="0,0,0,0,0,0,0,1,1,1"
+																									>
+																										<div
+																											class="column-reverse"
+																										>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-a1-a1-a0"
+																											>
+																												<h2>
+																													panel-a1-a1-a1-b1-a1-a1-a0
+																												</h2>
+																											</div>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-a1-a1-a1"
+																											>
+																												<div
+																													class="grid grid-a1-a1-a1-b1-a1-a1-a1"
+																												>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-a1-a1-a1-a"
+																													>
+																														<h2>
+																															panel-a1-a1-a1-b1-a1-a1-a1-a
+																														</h2>
+																													</div>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-a1-a1-a1-b"
+																													>
+																														<iframe
+																															src="./241210_FlowersFacingYou/index.html"
+																															class="flower-frame"
+																														></iframe>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+
+																					<div
+																						class="panel panel-a1-a1-a1-b1-b sub-cell"
+																						data-track="0,0,0,0,0,1,1,1,1,1"
+																					>
+																						<div
+																							class="column"
+																						>
+																							<div
+																								class="panel panel-a1-a1-a1-b1-b0"
+																							>
+																								<h2>
+																									panel-a1-a1-a1-b1-b0
+																								</h2>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-a1-b1-b1"
+																							>
+																								<div
+																									class="grid grid-a1-a1-a1-b1-b1"
+																								>
+																									<!-- a1-a1-a1-b1-b1-a: column stack -->
+																									<div
+																										class="panel panel-a1-a1-a1-b1-b1-a sub-cell"
+																										data-track="0,0,0,0,0,0,0,0,1,1"
+																									>
+																										<div
+																											class="column"
+																										>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-b1-a0"
+																											>
+																												<h2>
+																													panel-a1-a1-a1-b1-b1-a0
+																												</h2>
+																											</div>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-b1-a1"
+																											>
+																												<h1>
+																													Please
+																													enjoy
+																													it!
+																												</h1>
+																												<h2>
+																													panel-a1-a1-a1-b1-b1-a1
+																												</h2>
+																											</div>
+																										</div>
+																									</div>
+
+																									<div
+																										class="panel panel-a1-a1-a1-b1-b1-b sub-cell"
+																										data-track="0,0,0,0,0,0,1,1,1,1"
+																									>
+																										<div
+																											class="grid grid-a1-a1-a1-b1-b1-b0"
+																										>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-b1-b0-a sub-cell"
+																												data-track="0,0,0,0,0,0,0,1,1,1"
+																											>
+																												<div
+																													class="row"
+																												>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-b1-b0-a0"
+																													>
+																														<h1>
+																															left
+																															here
+																														</h1>
+																														<h2>
+																															panel-a1-a1-a1-b1-b1-b0-a0
+																														</h2>
+																													</div>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-b1-b0-a1"
+																													>
+																														<h2>
+																															panel-a1-a1-a1-b1-b1-b0-a1
+																														</h2>
+																													</div>
+																												</div>
+																											</div>
+																											<div
+																												class="panel panel-a1-a1-a1-b1-b1-b0-b sub-cell"
+																												data-track="0,0,0,0,0,0,0,1,1,1"
+																											>
+																												<div
+																													class="row"
+																												>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-b1-b0-b0"
+																													>
+																														<h2>
+																															panel-a1-a1-a1-b1-b1-b0-b0
+																														</h2>
+																													</div>
+																													<div
+																														class="panel panel-a1-a1-a1-b1-b1-b0-b1"
+																													>
+																														<h1>
+																															right
+																															here
+																														</h1>
+																														<h2>
+																															panel-a1-a1-a1-b1-b1-b0-b1
+																														</h2>
+																													</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																							<!-- end panel-a1-a1-a1-b1-b1 -->
+																						</div>
+																						<!-- end column -->
+																					</div>
+																				</div>
+																				<!-- end grid-a1-a1-a1-b1 -->
+																			</div>
+																			<!-- end panel-a1-a1-a1-b1 -->
+																		</div>
+																		<!-- end row-reverse -->
+																	</div>
+																	<!-- end panel-a1-a1-a1-b -->
+																</div>
+																<!-- end grid-a1-a1-a1 -->
+															</div>
+															<!-- end panel-a1-a1-a1 -->
+														</div>
+														<!-- end column-reverse -->
+													</div>
+													<!-- a1-a1-b -->
+													<div
+														class="panel panel-a1-a1-b sub-cell"
+														data-track="0,0,0,1,1,1,1,1,1,1"
+													>
+														<div class="column">
+															<div
+																class="panel panel-a1-a1-b0"
+															>
+																<h1>
+																	I like to
+																	create
+																</h1>
+																<h2>
+																	panel-a1-a1-b0
+																</h2>
+															</div>
+															<div
+																class="panel panel-a1-a1-b1"
+															>
+																<div
+																	class="grid grid-a1-a1-b1"
+																>
+																	<!-- CHANGED: panel-a1-a1-b1-a is now a sub-cell with row-reverse -->
+																	<div
+																		class="panel panel-a1-a1-b1-a sub-cell"
+																		data-track="0,0,0,0,0,0,1,1,1,1"
+																	>
+																		<div
+																			class="row-reverse"
+																		>
+																			<div
+																				class="panel panel-a1-a1-b1-a0"
+																			>
+																				<h2>
+																					panel-a1-a1-b1-a0
+																				</h2>
+																			</div>
+																			<div
+																				class="panel panel-a1-a1-b1-a1"
+																			>
+																				<h2>
+																					panel-a1-a1-b1-a1
+																				</h2>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="panel panel-a1-a1-b1-b sub-cell"
+																		data-track="0,0,0,0,1,1,1,1,1,1"
+																	>
+																		<div
+																			class="column"
+																		>
+																			<div
+																				class="panel panel-a1-a1-b1-b0"
+																			>
+																				<h1>
+																					from
+																					the
+																					very
+																					scratch
+																				</h1>
+																				<h2>
+																					panel-a1-a1-b1-b0
+																				</h2>
+																			</div>
+																			<div
+																				class="panel panel-a1-a1-b1-b1"
+																			>
+																				<div
+																					class="grid grid-a1-a1-b1-b1"
+																				>
+																					<div
+																						class="panel panel-a1-a1-b1-b1-a sub-cell"
+																						data-track="0,0,0,0,0,0,0,1,1,1"
+																					>
+																						<div
+																							class="column-reverse"
+																						>
+																							<div
+																								class="panel panel-a1-a1-b1-b1-a0"
+																							>
+																								<h2>
+																									panel-a1-a1-b1-b1-a0
+																								</h2>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-b1-b1-a1"
+																							>
+																								<h2>
+																									panel-a1-a1-b1-b1-a1
+																								</h2>
+																							</div>
+																						</div>
+																					</div>
+																					<div
+																						class="panel panel-a1-a1-b1-b1-b"
+																					>
+																						<div
+																							class="grid grid-a1-a1-b1-b1-b"
+																						>
+																							<div
+																								class="panel panel-a1-a1-b1-b1-b0-a sub-cell"
+																								data-track="0,0,0,0,0,1,1,1,1,1"
+																							>
+																								<div
+																									class="column"
+																								>
+																									<div
+																										class="panel panel-a1-a1-b1-b1-b0-a0"
+																									>
+																										<h2>
+																											panel-a1-a1-b1-b1-b0-a0
+																										</h2>
+																									</div>
+																									<div
+																										class="panel panel-a1-a1-b1-b1-b0-a1"
+																									>
+																										<h2>
+																											panel-a1-a1-b1-b1-b0-a1
+																										</h2>
+																									</div>
+																								</div>
+																							</div>
+																							<div
+																								class="panel panel-a1-a1-b1-b1-b0-b sub-cell"
+																								data-track="0,0,0,0,0,0,1,1,1,1"
+																							>
+																								<div
+																									class="column"
+																								>
+																									<div
+																										class="panel panel-a1-a1-b1-b1-b0-b0"
+																									>
+																										<h1>
+																											HI!
+																										</h1>
+																										<h2>
+																											panel-a1-a1-b1-b1-b0-b0
+																										</h2>
+																									</div>
+																									<div
+																										class="panel panel-a1-a1-b1-b1-b0-b1"
+																									>
+																										<iframe
+																											src="./241210_FlowersFacingYou/index.html"
+																											class="flower-frame"
+																										></iframe>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- end panel-a1-a1-b -->
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div
+										class="panel panel-a1-b sub-cell"
+										data-track="0,0,0,1,1,1,1,1,1,1"
+									>
+										<h2>panel-a1-b</h2>
+										<div class="row-reverse">
+											<div class="panel panel-a1-b0">
+												<h2>panel-a1-b0</h2>
+											</div>
+											<div class="panel panel-a1-b1">
+												<div class="grid grid-a1-b1">
+													<div
+														class="panel panel-a1-b1-a sub-cell"
+														data-track="0,0,0,0,0,1,1,2,2,2"
+													>
+														<div class="column">
+															<div
+																class="panel panel-a1-b1-a0"
+															>
+																<img
+																	src="./assets/L5.gif"
+																	class="panel-gif"
+																	alt="My work preview"
+																/>
+																<h2>
+																	panel-a1-b1-a0
+																</h2>
+															</div>
+															<div
+																class="panel panel-a1-b1-a1"
+															>
+																<h1>
+																	and creative
+																	coding...
+																</h1>
+																<h2>
+																	panel-a1-b1-a1
+																</h2>
+															</div>
+															<div
+																class="panel panel-a1-b1-a2"
+															>
+																<iframe
+																	src="./241210_FlowersFacingYou/index.html"
+																	class="flower-frame"
+																></iframe>
+															</div>
+														</div>
+													</div>
+													<div
+														class="panel panel-a1-b1-b sub-cell"
+														data-track="0,0,0,0,1,1,1,1,2,2"
+													>
+														<div
+															class="column-reverse"
+														>
+															<div
+																class="panel panel-a1-b1-b0"
+															>
+																<h1>
+																	games...
+																</h1>
+																<h2>
+																	panel-a1-b1-b0
+																</h2>
+															</div>
+															<div
+																class="panel panel-a1-b1-b1"
+															>
+																<img
+																	src="./assets/Death EFX.gif"
+																	class="panel-gif"
+																	alt="My work preview"
+																/>
+																<h2>
+																	panel-a1-b1-b1
+																</h2>
+															</div>
+															<div
+																class="panel panel-a1-b1-b2"
+															>
+																<h3>Works:</h3>
+																<p>
+																	GitHub:
+
+																	<a
+																		href="https://github.com/wpwcbc"
+																		target="_blank"
+																		rel="noopener noreferrer"
+																	>
+																		github.com/wpwcbc
+																	</a>
+																	<br />
+																	p5js:
+																	<a
+																		href="https://openprocessing.org/user/490509#sketches"
+																		target="_blank"
+																		rel="noopener noreferrer"
+																	>
+																		openprocessing.org/user/490509#sketches
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end grid-a1 -->
+							</div>
+							<!-- end panel-a1 -->
+						</div>
+						<!-- end column -->
+					</div>
+					<!-- end cell -->
+				</div>
+				<!-- end grid-a -->
+			</div>
+			<!-- end grid-wrapper -->
+		</main>
+
+		<script src="script.js"></script>
+	</body>
+</html>
