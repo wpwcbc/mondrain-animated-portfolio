@@ -1,123 +1,11 @@
+/* -------------------------------------------------------------
+   1. Reset & base typography
+------------------------------------------------------------- */
+
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
-}
-
-h2 {
-	opacity: 0;
-}
-
-/* The panel: fixed by the grid, just hide overflow */
-.panel-a1-b1-b1 {
-	position: relative; /* so the img can absolutely fill it */
-	overflow: hidden;
-}
-
-/* The image inside: ignore its own aspect ratio, fill panel, crop */
-.panel-a1-b1-b1 img {
-	position: absolute;
-	inset: 0; /* top:0; right:0; bottom:0; left:0 */
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* keep img aspect, but fill box and crop */
-	display: block;
-}
-
-/* The panel: fixed by the grid, just hide overflow */
-.panel-a1-b1-b2 {
-	position: relative; /* so the img can absolutely fill it */
-	overflow: hidden;
-}
-
-/* The image inside: ignore its own aspect ratio, fill panel, crop */
-.panel-a1-b1-b2 img {
-	position: absolute;
-	inset: 0; /* top:0; right:0; bottom:0; left:0 */
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* keep img aspect, but fill box and crop */
-	display: block;
-}
-
-.panel-gif {
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* or 'contain' if you don't want cropping */
-	display: block;
-}
-
-/* Text + links inside panels */
-.panel p {
-	margin: 0.5rem 1rem 0;
-	font-size: clamp(12px, 1.1vw, 16px);
-	line-height: 1.4;
-	text-align: center;
-	font-family: "Alfa Slab One", serif;
-}
-
-.panel p br {
-	display: block;
-	margin-bottom: 0.25rem; /* adds a bit of vertical space between lines */
-}
-
-.panel a {
-	color: #000;
-	font-weight: 600;
-	text-decoration: none;
-	border-bottom: 1px solid #000;
-	padding-bottom: 2px;
-	transition: color 0.15s ease, border-color 0.15s ease;
-	font-family: "Alfa Slab One", serif;
-}
-
-.panel a:hover,
-.panel a:focus {
-	color: #e43b2f;
-	border-bottom-color: #e43b2f;
-}
-
-.panel > h1,
-.panel > h2,
-.panel > h3 {
-	display: flex; /* heading is its own flex container */
-	align-items: center; /* vertical center */
-	justify-content: center; /* horizontal center */
-	font-family: "Alfa Slab One", serif;
-	height: 100%; /* fill the entire panel */
-	margin: 0;
-	text-align: center;
-}
-
-/* optional typography */
-.panel > h1 {
-	font-family: "Alfa Slab One", serif;
-	font-size: clamp(16px, 2vw, 28px);
-}
-
-.panel > h2 {
-	font-size: clamp(14px, 1.6vw, 22px);
-}
-
-.panel-a1-b1-b2 {
-	display: flex; /* heading is its own flex container */
-	flex-direction: column;
-	align-items: center; /* vertical center */
-	justify-content: center; /* horizontal center */
-}
-
-.panel-a1-b1-b2 h3 {
-	display: block; /* no flex */
-	height: auto; /* don’t fill the whole panel */
-	margin: 0 0 0.5rem;
-	text-align: center;
-}
-
-.flower-frame {
-	width: 100%;
-	height: 100%;
-	border: none;
-	display: block;
 }
 
 html,
@@ -127,6 +15,10 @@ body {
 	height: 100%;
 	font-family: system-ui, sans-serif;
 }
+
+/* -------------------------------------------------------------
+   2. Page & grid layout
+------------------------------------------------------------- */
 
 /* Main layout: lots of scroll room */
 main {
@@ -147,12 +39,14 @@ main {
 	background: #000; /* acts as the lines between cells */
 }
 
+/* Root grid */
 .grid-a {
 	grid-template-columns: 8fr;
 	grid-template-rows: 11fr;
 	padding: 8px;
 }
 
+/* Nested grids */
 .grid-a1 {
 	grid-template-columns: 8fr;
 	grid-template-rows: 7fr 4fr;
@@ -220,6 +114,10 @@ main {
 	grid-template-rows: 4fr;
 }
 
+/* -------------------------------------------------------------
+   3. Structural containers: cell / strips / panels
+------------------------------------------------------------- */
+
 /* Cells: frame + overflow hidden */
 .cell {
 	position: relative;
@@ -270,7 +168,137 @@ main {
 	overflow: hidden;
 }
 
-/* Colors per panel (only where needed for clarity) */
+/* -------------------------------------------------------------
+   4. Panel content: headings, debug ids, text, links
+------------------------------------------------------------- */
+
+/* Visible headings centered in the panel */
+.panel > h1,
+.panel > h2,
+.panel > h3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Alfa Slab One", serif;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+/* Typography scaling */
+.panel > h1 {
+	font-size: clamp(16px, 2vw, 28px);
+}
+
+.panel > h2 {
+	font-size: clamp(14px, 1.6vw, 22px);
+}
+
+/* Invisible debug labels */
+.panel-id {
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	margin: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Text + links inside panels */
+.panel p {
+	margin: 0.5rem 1rem 0;
+	font-size: clamp(12px, 1.1vw, 16px);
+	line-height: 1.4;
+	text-align: center;
+	font-family: "Alfa Slab One", serif;
+}
+
+.panel p br {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+.panel a {
+	color: #000;
+	font-weight: 600;
+	text-decoration: none;
+	border-bottom: 1px solid #000;
+	padding-bottom: 2px;
+	transition: color 0.15s ease, border-color 0.15s ease;
+	font-family: "Alfa Slab One", serif;
+}
+
+.panel a:hover,
+.panel a:focus {
+	color: #e43b2f;
+	border-bottom-color: #e43b2f;
+}
+
+/* Special layout for the "Works" panel */
+.panel-a1-b1-b2 {
+	position: relative;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.panel-a1-b1-b2 h3 {
+	display: block;
+	height: auto;
+	margin: 0 0 0.5rem;
+	text-align: center;
+}
+
+/* -------------------------------------------------------------
+   5. Embedded media: iframes, gifs, full-bleed image panels
+------------------------------------------------------------- */
+
+.flower-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+.panel-gif {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* full-bleed image panel */
+.panel-a1-b1-b1 {
+	position: relative;
+	overflow: hidden;
+}
+
+.panel-a1-b1-b1 img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* panel-a1-b1-b2 also supports full-bleed images */
+.panel-a1-b1-b2 img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* -------------------------------------------------------------
+   6. Per-panel colors
+------------------------------------------------------------- */
+
 .panel-a0 {
 	background: #ffffff;
 }
@@ -303,12 +331,12 @@ main {
 
 /* row-reverse children inside panel-a1-a1-a1-a */
 .panel-a1-a1-a1-a0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 /* a1-a1-a1-a1: black container for its grid */
 .panel-a1-a1-a1-a1 {
-	background: #000000; /* black */
+	background: #000000;
 }
 
 /* A and B are also black containers for their row-reverse content */
@@ -318,11 +346,11 @@ main {
 
 /* children inside panel-a1-a1-a1-a1-a */
 .panel-a1-a1-a1-a1-a0 {
-	background: #f5e327; /* yellow */
+	background: #f5e327;
 }
 
 .panel-a1-a1-a1-a1-a1 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-a1-b {
@@ -331,15 +359,15 @@ main {
 
 /* children inside panel-a1-a1-a1-a1-b */
 .panel-a1-a1-a1-a1-b0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-a1-b1 {
-	background: #f5e327; /* yellow */
+	background: #f5e327;
 }
 
 .panel-a1-a1-a1-a1-b2 {
-	background: #fff; /* white */
+	background: #ffffff;
 }
 
 /* container for the row-reverse stack b */
@@ -358,26 +386,26 @@ main {
 
 /* inner grid panels under b1 */
 .panel-a1-a1-a1-b1-a {
-	background: #000;
+	background: #000000;
 }
 
 /* column children inside panel-a1-a1-a1-b1-a */
 .panel-a1-a1-a1-b1-a0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 /* parent of the new row-reverse */
 .panel-a1-a1-a1-b1-a1 {
-	background: #000000; /* keep this black container if you like */
+	background: #000000;
 }
 
-/* NEW: row-reverse children inside panel-a1-a1-a1-b1-a1 */
+/* row-reverse children inside panel-a1-a1-a1-b1-a1 */
 .panel-a1-a1-a1-b1-a1-a0 {
-	background: #2a3b8f; /* blue */
+	background: #2a3b8f;
 }
 
 .panel-a1-a1-a1-b1-a1-a1 {
-	background: #000; /* black */
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-a1-a1-a0 {
@@ -385,15 +413,15 @@ main {
 }
 
 .panel-a1-a1-a1-b1-a1-a1-a1 {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-a1-a1-a1-a {
-	background: #fff;
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-b1-a1-a1-a1-b {
-	background: #fff;
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-b1-b {
@@ -410,15 +438,15 @@ main {
 
 /* a1-a1-a1-b1-b1-a column stack */
 .panel-a1-a1-a1-b1-b1-a {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-b1-a0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-b1-b1-a1 {
-	background: #e43b2f; /* red */
+	background: #e43b2f;
 }
 
 /* grid sibling under b1-b1 */
@@ -427,15 +455,15 @@ main {
 }
 
 .panel-a1-a1-a1-b1-b1-b0-a {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-b1-b0-a0 {
-	background: #fff;
+	background: #ffffff;
 }
 
 .panel-a1-a1-a1-b1-b1-b0-a1 {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-b1-b0-b {
@@ -443,61 +471,61 @@ main {
 }
 
 .panel-a1-a1-a1-b1-b1-b0-b0 {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-a1-b1-b1-b0-b1 {
-	background: #fff;
+	background: #ffffff;
 }
 
 /* sibling window in grid-a1-a1: container with a vertical split */
 .panel-a1-a1-b {
-	background: #fff;
+	background: #ffffff;
 }
 
 .panel-a1-a1-b0 {
-	background: #ffffff; /* white top child */
+	background: #ffffff;
 }
 
 .panel-a1-a1-b1 {
-	background: #000000; /* black bottom child (container for grid) */
+	background: #000000;
 }
 
 /* children inside panel-a1-a1-b1 */
 .panel-a1-a1-b1-a {
-	background: #000000; /* black container for row-reverse */
+	background: #000000;
 }
 
 /* row-reverse children inside panel-a1-a1-b1-a */
 .panel-a1-a1-b1-a0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 .panel-a1-a1-b1-a1 {
-	background: #f5e327; /* yellow */
+	background: #f5e327;
 }
 
 /* container panel for column + inner grid */
 .panel-a1-a1-b1-b {
-	background: #000000; /* black container */
+	background: #000000;
 }
 
 /* column children inside panel-a1-a1-b1-b */
 .panel-a1-a1-b1-b0 {
-	background: #ffffff; /* white */
+	background: #ffffff;
 }
 
 .panel-a1-a1-b1-b1 {
-	background: #000000; /* black container for grid-a1-a1-b1-b1 */
+	background: #000000;
 }
 
 /* children inside panel-a1-a1-b1-b1 grid */
 .panel-a1-a1-b1-b1-a {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-b1-b1-a0 {
-	background: #fff;
+	background: #ffffff;
 }
 
 .panel-a1-a1-b1-b1-a1 {
@@ -505,16 +533,16 @@ main {
 }
 
 .panel-a1-a1-b1-b1-b {
-	background: #ffffff; /* white container for grid-a1-a1-b1-b1-b */
+	background: #ffffff;
 }
 
 /* children inside grid-a1-a1-b1-b1-b */
 .panel-a1-a1-b1-b1-b0-a {
-	background: #000;
+	background: #000000;
 }
 
 .panel-a1-a1-b1-b1-b0-b {
-	background: #000;
+	background: #000000;
 }
 
 /* deepest column children */
@@ -531,7 +559,7 @@ main {
 }
 
 .panel-a1-a1-b1-b1-b0-b1 {
-	background: #000;
+	background: #000000;
 }
 
 /* right side (a1-b) */
